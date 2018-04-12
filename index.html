@@ -2,14 +2,25 @@
 <html lang="ja" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>世界のナベアツ</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <style media="screen">
+      .container {
+        text-align: center;
+        margin:0 auto;
+      }
+    </style>
   </head>
   <body>
-    <p>Hello world!!</p>
-    <p>click <button type="button" name="button" onclick="clicked()">this button</button> as you want</p>
-    <p id="show_number">0</p>
-    <img src="" style="display:none;" alt="nabeatsu" id="_aho">
-    <button type="button" name="button" onclick="counter.reset()">reset</button>
+
+    <div class="container">
+      <p>ボタンを押してください</p>
+      <button type="button" name="button" onclick="clicked()">カウントアップ！</button>
+      <p id="show_number">0</p>
+      <img class="animated tada" src="" style="display:none; margin:0 auto;" alt="nabeatsu" id="_aho">
+      <button type="button" name="button" onclick="counter.reset()" style="margin-top:15px;">リセット</button>
+    </div>
 
   </body>
   <script type="text/javascript">
