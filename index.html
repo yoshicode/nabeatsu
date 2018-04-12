@@ -8,7 +8,7 @@
     <p>Hello world!!</p>
     <p>click <button type="button" name="button" onclick="clicked()">this button</button> as you want</p>
     <p id="show_number">0</p>
-    <img src="/img/nabeatsu.jpg" style="display:none;" alt="nabeatsu" id="_aho">
+    <img src="" style="display:none;" alt="nabeatsu" id="_aho">
     <button type="button" name="button" onclick="counter.reset()">reset</button>
 
   </body>
@@ -37,14 +37,23 @@
 
       nabeatsu: function(num) {
         // Nabeatsu
-        var isNumWithThree = num % 3 === 0 || String(num).includes('3');
+        var n = "1";
+        var isInclude = String(num).includes('3');
+        var isMultiplesOfThree = num % 3 === 0
+        var isNumWithThree = isMultiplesOfThree || isInclude;
+
+        if (!isMultiplesOfThree && isInclude) {
+          n = String(parseInt(Math.random() * 3) + 1);
+        }
+
+        aho.src = "/img/nabeatsu_"+ n +".jpg";
         aho.style.display = isNumWithThree ? "block" : "none";
       },
 
       reset: function() {
         $sn.innerText = 0;
         aho.style.display = "none";
-        // Reset number 
+        // Reset number
         this.num = 0;
       }
 
