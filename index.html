@@ -2,15 +2,11 @@
 <html lang="ja" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>世界のナベアツ</title>
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <style media="screen">
-      .container {
-        text-align: center;
-        margin:0 auto;
-      }
-    </style>
+    <link rel="stylesheet" href="static/css/index.css">
   </head>
   <body>
 
@@ -23,52 +19,5 @@
     </div>
 
   </body>
-  <script type="text/javascript">
-
-    var clicked = function() {
-      counter.increase();
-    }
-
-    var reset = function() {
-      counter.reset();
-    }
-
-    var aho = document.getElementById('_aho');
-    var $sn = document.getElementById('show_number');
-
-    var counter = {
-
-      num: parseInt($sn.innerText, 10),
-
-      increase: function() {
-        this.num += 1;
-        $sn.innerText = this.num;
-        this.nabeatsu(this.num);
-      },
-
-      nabeatsu: function(num) {
-        // Nabeatsu
-        var n = "1";
-        var isInclude = String(num).includes('3');
-        var isMultiplesOfThree = num % 3 === 0
-        var isNumWithThree = isMultiplesOfThree || isInclude;
-
-        if (!isMultiplesOfThree && isInclude) {
-          n = String(parseInt(Math.random() * 3) + 1);
-        }
-
-        aho.src = "img/nabeatsu_"+ n +".jpg";
-        aho.style.display = isNumWithThree ? "block" : "none";
-      },
-
-      reset: function() {
-        $sn.innerText = 0;
-        aho.style.display = "none";
-        // Reset number
-        this.num = 0;
-      }
-
-    }
-
-  </script>
+  <script type="text/javascript" src="static/js/index.js"></script>
 </html>
